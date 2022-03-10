@@ -1,14 +1,20 @@
 <?php
 	
-	$command = escapeshellcmd('python RecentByAccChron.py');
-	$output = json_decode(exec($command), true);
+	$command = escapeshellcmd('python RecentByAccChron.py a');
+	$output = shell_exec($command);
 	$outputStr = "<div><table style = \"width: 100%\">";
 	$outputStr .= "<tr><td><h3>Recent Tweets By Account: Chronological</h3></td></tr>";
-	for($i = 0; $i < 10; $i++)
+	$outputStr .= "<tr><td>";
+	for($i = 0; $i < 59; $i++)
 	{
-		$outputStr .= "<tr><td>" . $output[$i][0] . " </td><td>";
+		 $outputStr .= $output[$i];
 	}
-	$outputStr .= "</div>";
+	 $outputStr .= " </td><td><tr><td>";
+	for($i = 58; $i < 118; $i++)
+	{
+		$outputStr .= $output[$i];
+	}
+	$outputStr .= " </td><td>";
 
 	echo($outputStr);
 ?>
