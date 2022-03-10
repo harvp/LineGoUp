@@ -14,15 +14,10 @@ import sys
 import getopt
 import tweepy
 
-returnList = [["https://twitter.com/suhemparack/status/1499431019769856000", 5, 3],
-["https://twitter.com/suhemparack/status/1499425824617144321", 2, 0],
-["https://twitter.com/suhemparack/status/1499083922038132736", 17, 2],
-["https://twitter.com/suhemparack/status/1498390574910500865", 8, 0],
-["https://twitter.com/suhemparack/status/1498308588833411074", 1, 0],
-["https://twitter.com/suhemparack/status/1498135404540616710", 7, 0]]
+
 errorMessage = ["Error - invalid call", 0, 0]
 
 if len(sys.argv) == 2:
-	print(returnList)
+	print("https://twitter.com/Microsoft/status/1496602021323022338?ref_src=twsrc%5Etfw")
 else:
 	print(errorMessage)

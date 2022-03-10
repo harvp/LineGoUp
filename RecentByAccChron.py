@@ -18,6 +18,6 @@ import tweepy
 errorMessage = "Error - invalid call"
 
 if len(sys.argv) == 2:
-	print("https://twitter.com/suhemparack/status/1499431019769856000","https://twitter.com/suhemparack/status/1499425824617144321", "https://twitter.com/suhemparack/status/1499083922038132736", "https://twitter.com/suhemparack/status/1498390574910500865", "https://twitter.com/suhemparack/status/1498308588833411074", "https://twitter.com/suhemparack/status/1498135404540616710")
+	print("<blockquote class=\"twitter-tweet\"><p>Southern communities inspire change through teaching tech.<br><br>Learn about this digital-first academy: <a href=\"https://t.co/S0TA6FDScf\">https://t.co/S0TA6FDScf</a></p>&mdash; Microsoft (@Microsoft) <a href=\"https://twitter.com/Microsoft/status/1496582638248857600?ref_src=twsrc%5Etfw\">February 23, 2022</a></blockquote>", "<blockquote class=\"twitter-tweet\"><p>Resources to accelerate your inclusion journey: <a href=\"https://t.co/no6T2dNZ7x\">https://t.co/no6T2dNZ7x</a></p>&mdash; Microsoft (@Microsoft) <a href=\"https://twitter.com/Microsoft/status/1496602025718657030?ref_src=twsrc%5Etfw\">February 23, 2022</a></blockquote>")
 else:
 	print(errorMessage)

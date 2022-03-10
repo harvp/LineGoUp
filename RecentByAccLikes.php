@@ -1,14 +1,12 @@
 <?php
 	
-	$command = escapeshellcmd('python RecentByAccChron.py');
-	$output = json_decode(exec($command), true);
-	$outputStr = "<div><table style = \"width: 100%\">";
-	$outputStr .= "<tr><td><h3>Recent Tweets By Account: Chronological</h3></td></tr>";
-	for($i = 0; $i < 10; $i++)
-	{
-		$outputStr .= "<tr><td>" . $output[$i][0] . " </td><td>";
-	}
-	$outputStr .= "</div>";
+	$command = escapeshellcmd('python RecentByAccLikes.py a');
+	$output = shell_exec($command);
+	$outputStr = "<h3>Recent Tweets By Account: Most Liked</h3>";
+ 	$outputStr .="<blockquote class=\"twitter-tweet\"><p>Stephanie J. Creary, Wharton School Assistant Professor, shares insights on identity and inclusion. <a>pic.twitter.com/cwZbOQNs1O</a></p>&mdash; Microsoft (@Microsoft) <a href=\"";
+ 	$outputStr .= $output;
+ 	$outputStr .= "\">February 23, 2022</a></blockquote>";	
 
 	echo($outputStr);
 ?>
+

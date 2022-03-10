@@ -6,7 +6,9 @@ Black: #000000
 Dark Gray: #303030
 White: #FFFFFF
 -->
-
+<?php
+	session_start();
+	?>
 <html lang = "en-us">
 	<head>
 		<meta charset = "UTF-8">
@@ -113,6 +115,7 @@ White: #FFFFFF
 			</form>
 		</section>
 		<hr>
+		 
 		<section> <!-- Output -->
 			<h2>
 				Function Output:
@@ -121,8 +124,10 @@ White: #FFFFFF
 				Nothing to display!
 			</p>
 		</section>
+
 		<hr>
 		<section> <!-- Javascript to access scripts -->
+			<script async src="https://platform.twitter.com/widgets.js"></script>
 			<script>
 				function getSingleTweet()
 				{
@@ -170,6 +175,9 @@ White: #FFFFFF
 						if(this.readyState == 4 && this.status == 200)
 						{
 							document.getElementById(output).innerHTML = this.responseText;
+							var script= document.createElement('script');
+      						script.src= "https://platform.twitter.com/widgets.js";
+							document.getElementById(output).appendChild(script);
 						}
 					}
 					xmlhttp.open("GET", dest, true);
@@ -179,55 +187,6 @@ White: #FFFFFF
 			</script>
 		</section>
 
-		<section>
-			<?php
-	require "vendor/autoload.php";
-
-    use Abraham\TwitterOAuth\TwitterOAuth;
-	$consumer_key = "g8Jj0s6T97rqmLBtthMyXnmXu";
-	$consumer_secret = "gqPTE9d856wMKFxpqLqFaGHa3zKwEqYwZ3v93KMym3rRGiNtgf";
-	$access_token = "95531087-Xo8T3yS9o4w0AojY9822zv8cUGBrSUVtQf36y3Bfz";
-	$access_token_secret = "7NocmxvALKIl50RfbBBKvKY1bCgSGARgCgTsxvlRlRmZu";
-	// Twitter account username
-	$twitterID = 'codexworldblog';
-
-	// Number of tweets
-	$tweetNum = 10;
- 
-	// Authenticate with twitter
-	$twitterConnection = new TwitterOAuth($consumer_key, $consumer_secret, $access_token, $access_token_secret);
-	$connection->setApiVersion('2');
-    // Get the user timeline feeds
-	$feedData = $twitterConnection->get(
-    'statuses/user_timeline',
-    array(
-        'screen_name'     => $twitterID,
-        'count'           => $tweetNum,
-        'exclude_replies' => false
-    )
-);
-
-    <?php
-    // Get user info
-    $profilePic = str_replace("normal", "400x400", $feedData[0]->user->profile_image_url_https);
-    $userName = $feedData[0]->user->name;
-    $userScreenName = $feedData[0]->user->screen_name;
-    $tweetsNum = $feedData[0]->user->statuses_count;
-    $followerNum = $feedData[0]->user->followers_count;
-?>
-
-<div class="user-info">
-    <img src="<?php echo $profilePic; ?>" class="img-thumbnail" />
-    <h2><?php echo $userName; ?></h2>
-    <a href="https://twitter.com/<?php echo $userScreenName; ?>" target="_blank">@<?php echo $userScreenName; ?></a>
-</div>
-
-<div class="tweet-info">
-    <div class="fnum"><div>Tweets</div><div class="badge"><?php echo $tweetsNum; ?></div></div>
-    <div class="fnum"><div>Followers</div><div class="badge"><?php echo $followerNum; ?></div></div>
-</div>
-?>
-		</section>
 	</body>
 
 </html>
