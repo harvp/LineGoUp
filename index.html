@@ -3,8 +3,8 @@
 Colors Used:
 Twitter Blue: #55ACEE
 Black: #000000
-Dark Gray: #303030
 White: #FFFFFF
+Dark Slate Blue: #483D8B
 -->
 
 <html lang = "en-us">
@@ -36,6 +36,7 @@ White: #FFFFFF
 				margin: 0px;
 				background: #55ACEE;
 				color: #FFFFFF;
+				border-bottom: solid 5px #55ACEE;
 			}
 			
 			h1
@@ -68,10 +69,20 @@ White: #FFFFFF
 			{
 				text-align: center;
 			}
+			
+			.button
+			{
+				background: #483D8B; 
+				color: #FFFFFF; 
+				height: 50px; 
+				width: 200px;
+				border-radius: 8px;
+				margin: 10px;
+			}
 		</style>
 	</head>
 	<body> 
-		<section class = "pageHeader"> <!-- Page Headder -->
+		<section class = "pageHeader"> <!-- Page Header -->
 			<h1> Line Go Up </h1>
 		</section>
 		<hr>
@@ -97,19 +108,18 @@ White: #FFFFFF
 			</form>
 			<hr>
 			<form>
-				<input id = "goButton" type = "button" value = "Single Tweet" style="background:#303030; color:#FFFFFF; height:50px; width:200px;" onclick = "getSingleTweet()" \>
+				<input id = "goButton" type = "button" value = "Single Tweet" class = "button" onclick = "getSingleTweet()" \>
 
-				<input id = "goButton" type = "button" value = "Most Recent Tweets" style="background:#303030; color:#FFFFFF; height:50px; width:200px;" onclick = "getRecentByAccChron()" \>
+				<input id = "goButton" type = "button" value = "Most Recent Tweets" class = "button" onclick = "getRecentByAccChron()" \>
+
+				<input id = "goButton" type = "button" value = "Most Recent Likes" class = "button" onclick = "getRecentByAccLikes()" \>
 			</form>
 			<form>
-				<input id = "goButton" type = "button" value = "Most Recent Likes" style="background:#303030; color:#FFFFFF; height:50px; width:200px" onclick = "getRecentByAccLikes()" \>
+				<input id = "goButton" type = "button" value = "Most Recent Retweets" class = "button" onclick = "getRecentByAccRetweets()" \>
 
-				<input id = "goButton" type = "button" value = "Most Recent Retweets" style="background:#303030; color:#FFFFFF; height:50px; width:200px" onclick = "getRecentByAccRetweets()"\>
-			</form>
-			<form>
-				<input id = "goButton" type = "button" value = "Top Tweets By Mention" style="background:#303030; color:#FFFFFF; height:50px; width:200px" onclick = "getTopTweetsByMention()"\>
+				<input id = "goButton" type = "button" value = "Top Tweets By Mention" class = "button" onclick = "getTopTweetsByMention()" \>
 	
-				<input id = "goButton" type = "button" value = "Top Tweets By Tag" style="background:#303030; color:#FFFFFF; height:50px; width:200px" onclick = "getTopTweetsByTag()"\>
+				<input id = "goButton" type = "button" value = "Top Tweets By Tag" class = "button" onclick = "getTopTweetsByTag()" \>
 			</form>
 		</section>
 		<hr>
