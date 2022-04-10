@@ -12,9 +12,12 @@ query = 'from:' + user + " -is:retweet"
 tweets = client.search_recent_tweets(query=query, tweet_fields=['context_annotations', 'created_at'], max_results=100)
 
 for tweet in tweets.data:
-    print(tweet.text)
+    #print(tweet.text)
     tweetURL = "https://twitter.com/" + user + "/status/" + str(tweet.id)
-    print(tweetURL)
-    print(tweet.date)
+    outputString = "<blockquote class=\"twitter-tweet\"><p>" + tweet.text + "<a href=\"" + tweetURL + "\"></a></p></blockquote>"
+    print(outputString)
+
+
+
 
 
