@@ -80,7 +80,7 @@ White: #FFFFFF
 		<section> <!-- Intro Paragraph -->
 			<p>
 				Welcome to Line Go Up. This is an analytics tool for Twitter and the stock market. <br>
-				The program gathers information on anything related to tweets and tries to find a correlation to the stock market. <br>
+				The program gathers information on anything related to tweets and tries to find a correlation to the stock market. - test <br>
 			</p>
 		</section>
 		<hr>
