@@ -101,7 +101,7 @@ White: #FFFFFF
 			<form>
 				<input id = "goButton" type = "button" value = "Single Tweet" style="background:#303030; color:#FFFFFF; height:50px; width:200px;" onclick = "getSingleTweet()" \>
 
-				<input id = "goButton" type = "submit" value = "Most Recent Tweets" style="background:#303030; color:#FFFFFF; height:50px; width:200px;" onclick = "getRecentByAccChron()" \>
+				<input id = "goButton" type = "button" value = "Most Recent Tweets" style="background:#303030; color:#FFFFFF; height:50px; width:200px;" onclick = "getRecentByAccChron()" \>
 			</form>
 			<form>
 				<input id = "goButton" type = "button" value = "Most Recent Likes" style="background:#303030; color:#FFFFFF; height:50px; width:200px" onclick = "getRecentByAccLikes()" \>
@@ -138,20 +138,17 @@ White: #FFFFFF
 					$(document).ready(
 						function()
 						{
-							$('#sub').click(function(){
+							$('#goButton').click(function()
+							{
 							var na = document.getElementById('searchUser').value;
  
-							if(na==''){
+							if(na=='')
+							{
   								alert("please fill the empty fields");
 							}
-							else{
-  								$.post("RecentByAccChron.php",
-  								{
-     								name: na,
-  								}
-  								);
-								}
-
+							else
+							{
+  								$.post("RecentByAccChron.php");
 							});
 						});
 						
