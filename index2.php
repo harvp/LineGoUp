@@ -96,6 +96,7 @@ White: #FFFFFF
 			</p>
 			<form method = "POST" action = "RecentByAccChron.php">
 				<input id = "searchUser" type = "text" style = "width: 300px;" placeholder = "Twitter User" name = "user" \>
+				<input type = "submit"  value = "Submit" />
 			</form>
 			<hr>
 			<form>
