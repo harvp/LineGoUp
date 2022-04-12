@@ -96,7 +96,6 @@ White: #FFFFFF
 			</p>
 			<form action = "RecentByAccChron.php" method = "POST">
 				<input id = "searchUser" type = "text" style = "width: 300px;" placeholder = "Twitter User" name = "user" \>
-				<input id = "goButton" type = "submit" value = "Most Recent Tweets" style="background:#303030; color:#FFFFFF; height:50px; width:200px;" onclick = "getRecentByAccChron()" \>			
 			</form>
 			<hr>
 			<form>
