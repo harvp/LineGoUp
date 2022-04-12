@@ -96,7 +96,7 @@ White: #FFFFFF
 				of other things.
 			</p>
 			<form method = "POST">
-				<input id = "searchUser" type = "text" style = "width: 300px;" placeholder = "Twitter User" name = "user" value = "<?php echo $Name; ?>" \>
+				<input id = "searchUser" type = "text" style = "width: 300px;" placeholder = "Twitter User" name = "user" value = '<?php echo $Name; ?>' \>
 				<?php $Name = $_POST['user']; ?>
 			</form>
 			<hr>
