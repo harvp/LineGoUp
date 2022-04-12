@@ -1,6 +1,7 @@
 
 	<?php
 	
+	$name = "microsoft";
 	$command = escapeshellcmd('python RecentByAccChron.py'." ".$name);
 	$output = exec($command);
 	$counter = $output;

@@ -97,6 +97,7 @@ White: #FFFFFF
 			<form>
 				<input id = "searchUser" type = "text" style = "width: 300px;" placeholder = "Twitter User" name = "user" \>
 				<script>
+					// username stored here
 					var name = document.getElementById("searchUser").value;
 				</script>
 			</form>
@@ -138,7 +139,7 @@ White: #FFFFFF
 				}
 				function getRecentByAccChron()
 				{
-					toPHP("RecentByAccChron.php", "output", name)	
+					toPHP("RecentByAccChron.php", "output", "")	
 				}	
 				function getRecentByAccLikes()
 				{
