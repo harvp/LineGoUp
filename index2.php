@@ -151,9 +151,9 @@ White: #FFFFFF
   								$.post("RecentByAccChron.php");
 							});
 						});
-						
+						}
 					toPHP("RecentByAccChron.php", "output", "")	
-				}
+				}	
 				function getRecentByAccLikes()
 				{
 					toPHP("RecentByAccLikes.php", "output", "")
