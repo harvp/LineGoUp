@@ -138,7 +138,7 @@ White: #FFFFFF
 				}
 				function getRecentByAccChron()
 				{
-					toPHP("RecentByAccChron.php", "output", "name")	
+					toPHP("RecentByAccChron.php", "output", name)	
 				}	
 				function getRecentByAccLikes()
 				{
