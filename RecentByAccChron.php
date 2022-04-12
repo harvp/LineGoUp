@@ -1,14 +1,12 @@
 
 	<?php
 	
-	$name = "microsoft";
-	$command = escapeshellcmd('python RecentByAccChron.py'." ".$name);
-	$output = exec($command);
-	$counter = $output;
-	$stringBuilder = '<div>';
+	$name = $_GET["q"];
+	$query = 'python RecentByAccChron.py '. $name;
+	$command = escapeshellcmd($query);
+	$output = exec($query);
 	
 	echo $output;
-	
 
 ?>
 

@@ -139,7 +139,10 @@ White: #FFFFFF
 				}
 				function getRecentByAccChron()
 				{
-					toPHP("RecentByAccChron.php", "output", "")	
+					var entry = document.getElementById("searchUser").value
+					var temp = entry;
+					if(temp.trim()!= "")
+						toPHP("RecentByAccChron.php", "output", entry)	
 				}	
 				function getRecentByAccLikes()
 				{
