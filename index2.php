@@ -96,12 +96,15 @@ White: #FFFFFF
 			</p>
 			<form>
 				<input id = "searchUser" type = "text" style = "width: 300px;" placeholder = "Twitter User" name = "user" \>
+				<script>
+					var username = document.getElementById("searchUser").value;
+				</script>
 			</form>
 			<hr>
 			<form>
 				<input id = "goButton" type = "button" value = "Single Tweet" style="background:#303030; color:#FFFFFF; height:50px; width:200px;" onclick = "getSingleTweet()" \>
 
-				<input id = "goButton" type = "button" value = "Most Recent Tweets" style="background:#303030; color:#FFFFFF; height:50px; width:200px;" onclick = "getRecentByAccChron()" \>
+				<input id = "goButton" type = "button" value = "Most Recent Tweets" style="background:#303030; color:#FFFFFF; height:50px; width:200px;" onclick = "getRecentByAccChron(username)" \>
 			</form>
 			<form>
 				<input id = "goButton" type = "button" value = "Most Recent Likes" style="background:#303030; color:#FFFFFF; height:50px; width:200px" onclick = "getRecentByAccLikes()" \>
@@ -133,10 +136,9 @@ White: #FFFFFF
 				{
 					toPHP("GetSingleTweetByAcc.php", "output", "")
 				}
-				function getRecentByAccChron()
+				function getRecentByAccChron(username)
 				{
-					var username = document.getElementById("searchUser").value;
-					toPHP("RecentByAccChron.php", "output", username)	
+					toPHP("RecentByAccChron.php", "output", "")	
 				}	
 				function getRecentByAccLikes()
 				{
