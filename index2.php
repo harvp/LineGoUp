@@ -96,7 +96,7 @@ White: #FFFFFF
 			</p>
 			<form>
 				<input id = "searchUser" type = "text" style = "width: 300px;" placeholder = "Twitter User" name = "user" \>
-				<input type="submit" value="Submit"\>
+				<input type="submit" value="Submit" onclick="formdata()\>
 			</form>
 			<hr>
 			<form>
