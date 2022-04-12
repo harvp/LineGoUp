@@ -96,12 +96,10 @@ White: #FFFFFF
 			</p>
 			<form method = "POST">
 				<input id = "searchUser" type = "text" style = "width: 300px;" placeholder = "Twitter User" name = "user" \>
-			</form>
 			<hr>
-			<form>
 				<input id = "goButton" type = "button" value = "Single Tweet" style="background:#303030; color:#FFFFFF; height:50px; width:200px;" onclick = "getSingleTweet()" \>
-
-				<input id = "goButton" type = "button" value = "Most Recent Tweets" style="background:#303030; color:#FFFFFF; height:50px; width:200px;" onclick = "getRecentByAccChron()" \>
+			<hr>
+				<input id = "recTweet" type = "button" value = "Most Recent Tweets" style="background:#303030; color:#FFFFFF; height:50px; width:200px;" onclick = "getRecentByAccChron()" \>
 			</form>
 			<form>
 				<input id = "goButton" type = "button" value = "Most Recent Likes" style="background:#303030; color:#FFFFFF; height:50px; width:200px" onclick = "getRecentByAccLikes()" \>
@@ -138,7 +136,7 @@ White: #FFFFFF
 					$(document).ready(
 						function()
 						{
-							$('#goButton').click(function()
+							$('#recTweet').click(function()
 							{
 							var na = document.getElementById('searchUser').value;
  
