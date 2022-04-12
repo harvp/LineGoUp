@@ -96,7 +96,6 @@ White: #FFFFFF
 			</p>
 			<form>
 				<input id = "searchUser" type = "text" style = "width: 300px;" placeholder = "Twitter User" name = "user" \>
-				<input type="submit" value="Submit" onclick="formdata()" \>
 			</form>
 			<hr>
 			<form>
@@ -129,19 +128,16 @@ White: #FFFFFF
 		<hr>
 		<section> <!-- Javascript to access scripts -->
 			<script async src="https://platform.twitter.com/widgets.js"></script>
-			<script>
-				function formdata() 
-				{
-					var username = document.getElementById("searchUser").value;
-					document.writeln("Your name: " + username);
-				}				
+			<script>				
 				function getSingleTweet()
 				{
 					toPHP("GetSingleTweetByAcc.php", "output", "")
 				}
 				function getRecentByAccChron()
 				{
-					toPHP("RecentByAccChron.php", "output", "")	
+					var username = document.getElementById("searchUser").value;
+					document.writeln("Your name: " + username);
+					toPHP("RecentByAccChron.php", "output", username)	
 				}	
 				function getRecentByAccLikes()
 				{
