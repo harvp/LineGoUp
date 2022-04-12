@@ -8,7 +8,6 @@ White: #FFFFFF
 -->
 <?php
 	session_start();
-	global $name;
 	?>
 <html lang = "en-us">
 	<head>
@@ -95,9 +94,8 @@ White: #FFFFFF
 				their most recent likes, their top tweets by tag, and a number
 				of other things.
 			</p>
-			<form>
-				<input id = "searchUser" type = "text" style = "width: 300px;" placeholder = "Twitter User" value='<?php echo $name; ?>' \>
-				<?php $name = $_POST['searchUser']; ?>			
+			<form action="RecentByAccChron.php" method="POST">
+				<input id = "searchUser" type = "text" style = "width: 300px;" placeholder = "Twitter User" name = "user" \>			
 			</form>
 			<hr>
 			<form>
