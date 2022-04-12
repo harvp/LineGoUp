@@ -94,7 +94,7 @@ White: #FFFFFF
 				their most recent likes, their top tweets by tag, and a number
 				of other things.
 			</p>
-			<form action = "RecentByAccChron.php" method = "POST">
+			<form method = "POST">
 				<input id = "searchUser" type = "text" style = "width: 300px;" placeholder = "Twitter User" name = "user" \>
 			</form>
 			<hr>
@@ -133,6 +133,25 @@ White: #FFFFFF
 				{
 					toPHP("GetSingleTweetByAcc.php", "output", "")
 				}
+				$(document).ready(
+	function()
+	{
+		$('#sub').click(function(){
+		var na = document.getElementById('searchUser').value;
+ 
+		if(na==''){
+  			alert("please fill the empty fields");
+		}
+		else{
+  			$.post("RecentByAccChron.php",
+  			{
+     			name: na,
+  			}
+  			);
+			}
+
+		});
+	});
 				function getRecentByAccChron()
 				{
 					toPHP("RecentByAccChron.php", "output", "")

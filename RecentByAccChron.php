@@ -2,8 +2,9 @@
 	<?php
 	
 	$Name = "microsoft";
-
-   	$Name = $_POST["user"];
+	if(isset($_POST["searchUser"])){
+   		$Email = $_POST["searchUser"];
+	}
 
 	$command = escapeshellcmd('python RecentByAccChron.py'." ".$Name);
 	$output = exec($command);
