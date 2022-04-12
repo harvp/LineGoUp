@@ -133,7 +133,7 @@ White: #FFFFFF
 				function formdata() 
 				{
 					var username = document.getElementById("searchUser").value;
-					document.writeln("Your name: " + lastname);
+					document.writeln("Your name: " + username);
 				}				
 				function getSingleTweet()
 				{
