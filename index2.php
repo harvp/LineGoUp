@@ -8,7 +8,6 @@ White: #FFFFFF
 -->
 <?php
 	session_start();
-	$Name = "";
 	?>
 <html lang = "en-us">
 	<head>
@@ -95,15 +94,15 @@ White: #FFFFFF
 				their most recent likes, their top tweets by tag, and a number
 				of other things.
 			</p>
-			<form method = "POST">
-				<input id = "searchUser" type = "text" style = "width: 300px;" placeholder = "Twitter User" name = "user" value = '<?php echo $Name; ?>' />
-				<?php $Name = $_POST['user']; ?>
+			<form>
+				<input id = "searchUser" type = "text" style = "width: 300px;" placeholder = "Twitter User" name = "user" \>
+				<input type="submit" value="Submit"\>
 			</form>
 			<hr>
 			<form>
 				<input id = "goButton" type = "button" value = "Single Tweet" style="background:#303030; color:#FFFFFF; height:50px; width:200px;" onclick = "getSingleTweet()" \>
 
-				<input id = "goButton" type = "button" value = "Most Recent Tweets" style="background:#303030; color:#FFFFFF; height:50px; width:200px;" onclick = "getRecentByAccChron($Name)" \>
+				<input id = "goButton" type = "button" value = "Most Recent Tweets" style="background:#303030; color:#FFFFFF; height:50px; width:200px;" onclick = "getRecentByAccChron()" \>
 			</form>
 			<form>
 				<input id = "goButton" type = "button" value = "Most Recent Likes" style="background:#303030; color:#FFFFFF; height:50px; width:200px" onclick = "getRecentByAccLikes()" \>
@@ -131,11 +130,16 @@ White: #FFFFFF
 		<section> <!-- Javascript to access scripts -->
 			<script async src="https://platform.twitter.com/widgets.js"></script>
 			<script>
+				function formdata() 
+				{
+					var username = document.getElementById("searchUser").value;
+					document.writeln("Your name: " + lastname);
+				}				
 				function getSingleTweet()
 				{
 					toPHP("GetSingleTweetByAcc.php", "output", "")
 				}
-				function getRecentByAccChron($Name)
+				function getRecentByAccChron()
 				{
 					toPHP("RecentByAccChron.php", "output", "")	
 				}	
