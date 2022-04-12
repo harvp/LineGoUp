@@ -2,7 +2,7 @@
 	<?php
 	
 	$Name = "microsoft";
-	if(isset($_POST["searchUser"])){
+	if(isset($_POST["goButton"])){
    		$Name = $_POST["searchUser"];
 	}
 

@@ -94,12 +94,14 @@ White: #FFFFFF
 				their most recent likes, their top tweets by tag, and a number
 				of other things.
 			</p>
-			<form method = "POST">
+			<form method = "POST" action = "RecentByAccChron.php">
 				<input id = "searchUser" type = "text" style = "width: 300px;" placeholder = "Twitter User" name = "user" \>
+			</form>
 			<hr>
+			<form>
 				<input id = "goButton" type = "button" value = "Single Tweet" style="background:#303030; color:#FFFFFF; height:50px; width:200px;" onclick = "getSingleTweet()" \>
-			<hr>
-				<input id = "recTweet" type = "button" value = "Most Recent Tweets" style="background:#303030; color:#FFFFFF; height:50px; width:200px;" onclick = "getRecentByAccChron()" \>
+
+				<input id = "goButton" type = "button" value = "Most Recent Tweets" style="background:#303030; color:#FFFFFF; height:50px; width:200px;" onclick = "getRecentByAccChron()" \>
 			</form>
 			<form>
 				<input id = "goButton" type = "button" value = "Most Recent Likes" style="background:#303030; color:#FFFFFF; height:50px; width:200px" onclick = "getRecentByAccLikes()" \>
@@ -133,23 +135,6 @@ White: #FFFFFF
 				}
 				function getRecentByAccChron()
 				{
-					$(document).ready(
-						function()
-						{
-							$('#recTweet').click(function()
-							{
-							var na = document.getElementById('searchUser').value;
- 
-							if(na=='')
-							{
-  								alert("please fill the empty fields");
-							}
-							else
-							{
-  								$.post("RecentByAccChron.php");
-							});
-						});
-						}
 					toPHP("RecentByAccChron.php", "output", "")	
 				}	
 				function getRecentByAccLikes()
