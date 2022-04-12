@@ -94,9 +94,9 @@ White: #FFFFFF
 				their most recent likes, their top tweets by tag, and a number
 				of other things.
 			</p>
-			<form method = "POST" action = "RecentByAccChron.php">
-				<input id = "searchUser" type = "text" style = "width: 300px;" placeholder = "Twitter User" name = "user" \>
-				<input type = "submit"  value = "Submit" />
+			<form method = "POST">
+				<input id = "searchUser" type = "text" style = "width: 300px;" placeholder = "Twitter User" name = "user" value = "<?php echo $Name ?>" \>
+				<?php $Name = $_POST['user']; ?>
 			</form>
 			<hr>
 			<form>
@@ -136,7 +136,7 @@ White: #FFFFFF
 				}
 				function getRecentByAccChron()
 				{
-					toPHP("RecentByAccChron.php", "output", "")	
+					toPHP("RecentByAccChron.php", "output", $Name)	
 				}	
 				function getRecentByAccLikes()
 				{
