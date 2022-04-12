@@ -1,7 +1,7 @@
 
 	<?php
 	
-	$command = escapeshellcmd('python RecentByAccChron.py'." ".username);
+	$command = escapeshellcmd('python RecentByAccChron.py'." ".$name);
 	$output = exec($command);
 	$counter = $output;
 	$stringBuilder = '<div>';
