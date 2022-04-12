@@ -136,7 +136,6 @@ White: #FFFFFF
 				function getRecentByAccChron()
 				{
 					var username = document.getElementById("searchUser").value;
-					document.writeln("Your name: " + username);
 					toPHP("RecentByAccChron.php", "output", username)	
 				}	
 				function getRecentByAccLikes()
