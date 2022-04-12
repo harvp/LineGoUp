@@ -1,12 +1,12 @@
 
 	<?php
 	
-	$name = "";
+	$Name = "microsoft";
 	if(isset($_POST["user"])){
-   		$name = "python RecentByAccChron.py" + $_POST["user"];
+   		$Name = $_POST["user"];
 	}
 
-	$command = escapeshellcmd($name);
+	$command = escapeshellcmd('python RecentByAccChron.py'." ".$Name);
 	$output = exec($command);
 	$counter = $output;
 	$stringBuilder = '<div>';
