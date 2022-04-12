@@ -8,6 +8,7 @@ White: #FFFFFF
 -->
 <?php
 	session_start();
+	global $name;
 	?>
 <html lang = "en-us">
 	<head>
@@ -73,7 +74,7 @@ White: #FFFFFF
 		</style>
 	</head>
 	<body> 
-		<section class = "pageHeader"> <!-- Page Headder -->
+		<section class = "pageHeader"> <!-- Page Header -->
 			<h1> Line Go Up </h1>
 		</section>
 		<hr>
@@ -95,7 +96,8 @@ White: #FFFFFF
 				of other things.
 			</p>
 			<form>
-				<input id = "searchUser" type = "text" style = "width: 300px;" placeholder = "Twitter User" \>			
+				<input id = "searchUser" type = "text" style = "width: 300px;" placeholder = "Twitter User" value='<?php echo $name; ?>' \>
+				<?php $name = $_POST['searchUser']; ?>			
 			</form>
 			<hr>
 			<form>
