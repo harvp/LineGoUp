@@ -3,7 +3,7 @@
 	
 	$Name = "microsoft";
 	if(isset($_POST["searchUser"])){
-   		$Email = $_POST["searchUser"];
+   		$Name = $_POST["searchUser"];
 	}
 
 	$command = escapeshellcmd('python RecentByAccChron.py'." ".$Name);
