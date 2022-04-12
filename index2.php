@@ -102,7 +102,7 @@ White: #FFFFFF
 			<form>
 				<input id = "goButton" type = "button" value = "Single Tweet" style="background:#303030; color:#FFFFFF; height:50px; width:200px;" onclick = "getSingleTweet()" \>
 
-				<input id = "goButton" type = "button" value = "Most Recent Tweets" style="background:#303030; color:#FFFFFF; height:50px; width:200px;" onclick = "getRecentByAccChron()" \>
+				<input id = "goButton" type = "button" value = "Most Recent Tweets" style="background:#303030; color:#FFFFFF; height:50px; width:200px;" onclick = "getRecentByAccChron($Name)" \>
 			</form>
 			<form>
 				<input id = "goButton" type = "button" value = "Most Recent Likes" style="background:#303030; color:#FFFFFF; height:50px; width:200px" onclick = "getRecentByAccLikes()" \>
@@ -134,9 +134,9 @@ White: #FFFFFF
 				{
 					toPHP("GetSingleTweetByAcc.php", "output", "")
 				}
-				function getRecentByAccChron()
+				function getRecentByAccChron($Name)
 				{
-					toPHP("RecentByAccChron.php", "output", $Name)	
+					toPHP("RecentByAccChron.php", "output", "")	
 				}	
 				function getRecentByAccLikes()
 				{
