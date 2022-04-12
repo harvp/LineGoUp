@@ -136,24 +136,26 @@ White: #FFFFFF
 				function getRecentByAccChron()
 				{
 					$(document).ready(
-	function()
-	{
-		$('#sub').click(function(){
-		var na = document.getElementById('searchUser').value;
+						function()
+						{
+							$('#sub').click(function(){
+							var na = document.getElementById('searchUser').value;
  
-		if(na==''){
-  			alert("please fill the empty fields");
-		}
-		else{
-  			$.post("RecentByAccChron.php",
-  			{
-     			name: na,
-  			}
-  			);
-			}
+							if(na==''){
+  								alert("please fill the empty fields");
+							}
+							else{
+  								$.post("RecentByAccChron.php",
+  								{
+     								name: na,
+  								}
+  								);
+								}
 
-		});
-	});
+							});
+						});
+						
+					toPHP("RecentByAccChron.php", "output", "")	
 				}
 				function getRecentByAccLikes()
 				{
