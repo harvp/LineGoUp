@@ -26,8 +26,8 @@ client = tweepy.Client(bearer_token="AAAAAAAAAAAAAAAAAAAAAHn2ZAEAAAAARCtdfQEvwI7
 
 screen_name = sys.argv[1]
 user = client.get_user(screen_name)
-ID = user.id_str
-tweets = client.get_liked_tweets(ID=ID, max_results=100)
+id = user.id_str
+tweets = client.get_liked_tweets(id=id, tweet_fields=['context_annotations', 'created_at'], max_results=100)
 counter = 0
 
 for tweet in tweets.data:
@@ -36,8 +36,9 @@ for tweet in tweets.data:
 #print(counter)
 outputString = "\'"
 for tweet in tweets.data:
-    tweetURL = "https://twitter.com/" + user + "/status/" + str(tweet.id)
-    outputString += "<blockquote class=\"twitter-tweet\"><p>" + "<a href=\"" + tweetURL + "\"></a></p></blockquote>"
+	print(tweet)
+    #tweetURL = "https://twitter.com/" + user + "/status/" + str(tweet.id)
+    #outputString += "<blockquote class=\"twitter-tweet\"><p>" + "<a href=\"" + tweetURL + "\"></a></p></blockquote>"
     #print(tweet.text)
     #print(tweetURL)
 
