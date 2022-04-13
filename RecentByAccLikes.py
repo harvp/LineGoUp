@@ -13,6 +13,9 @@ import operator
 import sys
 import getopt
 import tweepy
+import re
+import sys
+
 
 errorMessage = "Error - invalid call"
 
