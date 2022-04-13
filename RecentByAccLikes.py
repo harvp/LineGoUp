@@ -14,10 +14,29 @@ import sys
 import getopt
 import tweepy
 
+errorMessage = "Error - invalid call"
 
-errorMessage = ["Error - invalid call", 0, 0]
+if len(sys.argv) != 2:
+    print(errorMessage)
 
-if len(sys.argv) == 2:
-	print("https://twitter.com/Microsoft/status/1496602021323022338?ref_src=twsrc%5Etfw")
-else:
-	print(errorMessage)
+client = tweepy.Client(bearer_token="AAAAAAAAAAAAAAAAAAAAAHn2ZAEAAAAARCtdfQEvwI7L53ZL2oVUn0OW%2FEY%3DOB3SQ9Q9C8W5B8SRvXvrXRi5ztUm3TtDTQePdvlUew3x6efS2a")
+
+user = sys.argv[1]
+query = 'from:' + user + " -is:like"
+tweets = client.get_liking_users(query=query, tweet_fields=['context_annotations', 'created_at'], max_results=100)
+counter = 0
+
+for tweet in tweets.data:
+    counter += 2
+
+#print(counter)
+outputString = "\'"
+for tweet in tweets.data:
+    tweetURL = "https://twitter.com/" + user + "/status/" + str(tweet.id)
+    outputString += "<blockquote class=\"twitter-tweet\"><p>" + "<a href=\"" + tweetURL + "\"></a></p></blockquote>"
+    #print(tweet.text)
+    #print(tweetURL)
+
+outputString += "\'"
+
+print(outputString)

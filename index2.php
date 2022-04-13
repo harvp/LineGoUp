@@ -146,7 +146,10 @@ White: #FFFFFF
 				}	
 				function getRecentByAccLikes()
 				{
-					toPHP("RecentByAccLikes.php", "output", "")
+					var entry = document.getElementById("searchUser").value
+					var temp = entry;
+					if(temp.trim()!= "")
+					toPHP("RecentByAccLikes.php", "output", entry)
 				}
 				function getRecentByAccRetweets()
 				{
