@@ -27,7 +27,7 @@ client = tweepy.Client(bearer_token="AAAAAAAAAAAAAAAAAAAAAHn2ZAEAAAAARCtdfQEvwI7
 screen_name = sys.argv[1]
 user = client.get_user(screen_name)
 ID = user.id_str
-tweets = client.get_liked_tweets(ID, max_results=100)
+tweets = client.get_liked_tweets(ID=ID, max_results=100)
 counter = 0
 
 for tweet in tweets.data:
