@@ -25,7 +25,7 @@ if len(sys.argv) != 2:
 client = tweepy.Client(bearer_token="AAAAAAAAAAAAAAAAAAAAAHn2ZAEAAAAARCtdfQEvwI7L53ZL2oVUn0OW%2FEY%3DOB3SQ9Q9C8W5B8SRvXvrXRi5ztUm3TtDTQePdvlUew3x6efS2a")
 
 user = sys.argv[1]
-query = 'from:' + user + " -is:like"
+query = 'from:' + user + " -is:retweet"
 tweets = client.get_liking_users(query=query, tweet_fields=['context_annotations', 'created_at'], max_results=100)
 counter = 0
 
