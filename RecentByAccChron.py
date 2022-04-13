@@ -25,10 +25,9 @@ if len(sys.argv) != 2:
 #print("<blockquote class=\"twitter-tweet\"><p>Southern communities inspire change through teaching tech.<br><br>Learn about this digital-first academy: <a href=\"https://t.co/S0TA6FDScf\">https://t.co/S0TA6FDScf</a></p>&mdash; Microsoft (@Microsoft) <a href=\"https://twitter.com/Microsoft/status/1496582638248857600?ref_src=twsrc%5Etfw\">February 23, 2022</a></blockquote>", "<blockquote class=\"twitter-tweet\"><p>Resources to accelerate your inclusion journey: <a href=\"https://t.co/no6T2dNZ7x\">https://t.co/no6T2dNZ7x</a></p>&mdash; Microsoft (@Microsoft) <a href=\"https://twitter.com/Microsoft/status/1496602025718657030?ref_src=twsrc%5Etfw\">February 23, 2022</a></blockquote>")
 client = tweepy.Client(bearer_token="AAAAAAAAAAAAAAAAAAAAAHn2ZAEAAAAARCtdfQEvwI7L53ZL2oVUn0OW%2FEY%3DOB3SQ9Q9C8W5B8SRvXvrXRi5ztUm3TtDTQePdvlUew3x6efS2a")
 
-screen_name = sys.argv[1]
-user = client.get_user(screen_name)
-ID = user.id_str
-tweets = client.get_liked_tweets(ID, tweet_fields=['context_annotations', 'created_at'], max_results=100)
+user = sys.argv[1]
+query = 'from:' + user + " -is:retweet"
+tweets = client.search_recent_tweets(query=query, tweet_fields=['context_annotations', 'created_at'], max_results=100)
 counter = 0
 
 for tweet in tweets.data:

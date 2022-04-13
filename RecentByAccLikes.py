@@ -24,9 +24,10 @@ if len(sys.argv) != 2:
 
 client = tweepy.Client(bearer_token="AAAAAAAAAAAAAAAAAAAAAHn2ZAEAAAAARCtdfQEvwI7L53ZL2oVUn0OW%2FEY%3DOB3SQ9Q9C8W5B8SRvXvrXRi5ztUm3TtDTQePdvlUew3x6efS2a")
 
-user = sys.argv[1]
-query = 'from:' + user + " -is:retweet"
-tweets = client.get_liking_users(query=query, tweet_fields=['context_annotations', 'created_at'], max_results=100)
+screen_name = sys.argv[1]
+user = client.get_user(screen_name)
+ID = user.id_str
+tweets = client.get_liked_tweets(ID, max_results=100)
 counter = 0
 
 for tweet in tweets.data:
