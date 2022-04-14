@@ -30,8 +30,8 @@ id = user.id_str
 tweets = client.get_liked_tweets(id=id, tweet_fields=['context_annotations', 'created_at'], max_results=100)
 counter = 0
 
-for tweet in tweets.data:
-    counter += 2
+#for tweet in tweets.data:
+    #counter += 2
 
 #print(counter)
 outputString = "\'"
