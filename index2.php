@@ -92,7 +92,7 @@ Dark Slate Blue: #483D8B
 			{
 				background-color: #E3E3E3;
 				width: 300px;
-				margin: 5px;
+				margin: 10px;
 			}
 
 			.text:hover
@@ -103,7 +103,7 @@ Dark Slate Blue: #483D8B
 	</head>
 	<body> 
 		<section class = "pageHeader"> <!-- Page Header -->
-			<h1> Line Go Up <img src = "https://raw.githubusercontent.com/harvp/LineGoUp/main/logo.png" alt = "logo" height = "60" width = "60"></h1>
+			<h1><img src = "https://raw.githubusercontent.com/harvp/LineGoUp/main/logo2.png" alt = "logo" height = "60" width = "60"></h1>
 		</section>
 		<hr>
 		<section> <!-- Intro Paragraph -->
