@@ -86,26 +86,24 @@ Dark Slate Blue: #483D8B
 			.button:hover 
 			{
   				background-color: #55ACEE;
-  				color: #FFFFFF;
-				font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 			}
 
 			.text 
 			{
 				background-color: #E3E3E3;
 				width: 300px;
+				margin: 5px;
 			}
 
 			.text:hover
 			{
 				background-color: #FFFFFF;
-				width: 300px;
 			}
 		</style>
 	</head>
 	<body> 
 		<section class = "pageHeader"> <!-- Page Header -->
-			<h1> Line Go Up <img src = "https://github.com/harvp/LineGoUp/blob/main/logo.png" alt = "logo" height = "60" width = "60"></h1>
+			<h1> Line Go Up <img src = "https://raw.githubusercontent.com/harvp/LineGoUp/main/logo.png" alt = "logo" height = "60" width = "60"></h1>
 		</section>
 		<hr>
 		<section> <!-- Intro Paragraph -->
