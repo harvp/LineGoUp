@@ -74,7 +74,7 @@ White: #FFFFFF
 	</head>
 	<body> 
 		<section class = "pageHeader"> <!-- Page Header -->
-			<h1> Line Go Up <img src = "https://github.com/harvp/LineGoUp/blob/main/logo.png" alt = "logo" height = "50" width = "50"></h1>
+			<h1> Line Go Up <img src = "https://github.com/harvp/LineGoUp/blob/main/logo.png" alt = "logo" height = "60" width = "60"></h1>
 		</section>
 		<hr>
 		<section> <!-- Intro Paragraph -->
