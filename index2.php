@@ -104,6 +104,7 @@ Dark Slate Blue: #483D8B
 	<body> 
 		<section class = "pageHeader"> <!-- Page Header -->
 			<h1><img src = "https://raw.githubusercontent.com/harvp/LineGoUp/main/logo2.png" alt = "logo" height = "100" width = "100"></h1>
+			<h1><img src = "https://raw.githubusercontent.com/harvp/LineGoUp/main/logo.png" alt = "logo" height = "100" width = "100"></h1>
 		</section>
 		<hr>
 		<section> <!-- Intro Paragraph -->
