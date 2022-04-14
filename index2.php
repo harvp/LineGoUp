@@ -149,7 +149,7 @@ White: #FFFFFF
 					var entry = document.getElementById("searchUser").value
 					var temp = entry;
 					if(temp.trim()!= "")
-					toPHP("RecentByAccLikes.php", "output", entry)
+						toPHP("RecentByAccLikes.php", "output", entry)
 				}
 				function getRecentByAccRetweets()
 				{
