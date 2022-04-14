@@ -30,15 +30,14 @@ id = user.id_str
 tweets = client.get_liked_tweets(id=id, tweet_fields=['context_annotations', 'created_at'], max_results=100)
 counter = 0
 
-#for tweet in tweets.data:
-    #counter += 2
+for tweet in tweets.data:
+    counter += 2
 
 #print(counter)
 outputString = "\'"
 for tweet in tweets.data:
-	print(tweet)
-    #tweetURL = "https://twitter.com/" + user + "/status/" + str(tweet.id)
-    #outputString += "<blockquote class=\"twitter-tweet\"><p>" + "<a href=\"" + tweetURL + "\"></a></p></blockquote>"
+    tweetURL = "https://twitter.com/" + screen_name + "/status/" + str(tweet.id)
+    outputString += "<blockquote class=\"twitter-tweet\"><p>" + "<a href=\"" + tweetURL + "\"></a></p></blockquote>"
     #print(tweet.text)
     #print(tweetURL)
 
