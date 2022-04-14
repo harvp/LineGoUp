@@ -2,9 +2,8 @@
 <!--
 Colors Used:
 Twitter Blue: #55ACEE
-Black: #000000
-Dark Gray: #303030
 White: #FFFFFF
+Dark Slate Blue: #483D8B
 -->
 <?php
 	session_start();
@@ -81,11 +80,26 @@ White: #FFFFFF
 				width: 200px;
 				border-radius: 8px;
 				margin: 10px;
+				font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 			}
+			
 			.button:hover 
 			{
   				background-color: #55ACEE;
   				color: #FFFFFF;
+				font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+			}
+
+			.text 
+			{
+				background-color: #E3E3E3;
+				width: 300px;
+			}
+
+			.text:hover
+			{
+				background-color: #FFFFFF;
+				width: 300px;
 			}
 		</style>
 	</head>
@@ -112,11 +126,7 @@ White: #FFFFFF
 				of other things.
 			</p>
 			<form>
-				<input id = "searchUser" type = "text" style = "width: 300px;" placeholder = "Twitter User" name = "user" \>
-				<script>
-					// username stored here
-					var name = document.getElementById("searchUser").value;
-				</script>
+				<input id = "searchUser" type = "text" class = "text" placeholder = "Twitter User" name = "user" \>
 			</form>
 			<hr>
 			<form>
@@ -152,7 +162,10 @@ White: #FFFFFF
 			<script>				
 				function getSingleTweet()
 				{
-					toPHP("GetSingleTweetByAcc.php", "output", "")
+					var entry = document.getElementById("searchUser").value
+					var temp = entry;
+					if(temp.trim()!= "")
+						toPHP("GetSingleTweetByAcc.php", "output", entry)
 				}
 				function getRecentByAccChron()
 				{
@@ -170,15 +183,24 @@ White: #FFFFFF
 				}
 				function getRecentByAccRetweets()
 				{
-					toPHP("RecentByAccRetweet.php", "output", "")
+					var entry = document.getElementById("searchUser").value
+					var temp = entry;
+					if(temp.trim()!= "")
+						toPHP("RecentByAccRetweet.php", "output", entry)
 				}
 				function getTopTweetsByMention()
 				{
-					toPHP("TopTweetsByMention.php", "output", "")
+					var entry = document.getElementById("searchUser").value
+					var temp = entry;
+					if(temp.trim()!= "")
+						toPHP("TopTweetsByMention.php", "output", entry)
 				}
 				function getTopTweetsByTag()
 				{
-					toPHP("TopTweetsByTag.php", "output", "")
+					var entry = document.getElementById("searchUser").value
+					var temp = entry;
+					if(temp.trim()!= "")
+						toPHP("TopTweetsByTag.php", "output", entry)
 				}
 
 				function pageLoad()
