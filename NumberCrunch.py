@@ -17,8 +17,8 @@ def calc_daily_vi(individual, average, twit_daily, twit_average):
     x = individual - average
     y = twit_daily - twit_average
     numerator = x * y
-    denominator = math.sqrt((x * x) * (y * y))
-    return abs(numerator/denominator)
+    denominator = math.sqrt((average * average) * (twit_average * twit_average))
+    return numerator/denominator
 
 
 errorMessage = "Error - invalid call"
@@ -146,6 +146,25 @@ for record in priceData:
         record[6] = calc_daily_vi(record[2], average_volume, engagement_scores[i], average_engagement)
         i += 1
 
-print(priceData)
 
+correlation = 0
+numerator_pct_sum = 0
+numerator_volume_sum = 0
+denominator_pct_sum = 0
+denominator_volume_sum = 0
+denominator_engagement_sum = 0
+i = 0
+for record in priceData:
+    numerator_pct_sum += ((record[1] - average_pct) * (engagement_scores[i] - average_engagement))
+    numerator_volume_sum += ((record[2] - average_volume) * (engagement_scores[i] - average_engagement))
+    denominator_pct_sum += (record[1] - average_pct) * (record[1] - average_pct)
+    denominator_volume_sum += (record[2] - average_volume) * (record[2] - average_volume)
+    denominator_engagement_sum += (engagement_scores[i] - average_engagement) * (engagement_scores[i] - average_engagement)
+    i += 1
+    if i == 7:
+        break
 
+pct_vi = numerator_pct_sum / (math.sqrt(denominator_pct_sum * denominator_engagement_sum))
+volume_vi = numerator_volume_sum / (math.sqrt(denominator_volume_sum * denominator_engagement_sum))
+print("The VI for the change in price is " + pct_vi)
+print("The VI for the change in volume is " + volume_vi)
