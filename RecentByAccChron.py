@@ -27,7 +27,7 @@ client = tweepy.Client(bearer_token="AAAAAAAAAAAAAAAAAAAAAHn2ZAEAAAAARCtdfQEvwI7
 
 user = sys.argv[1]
 query = 'from:' + user + " -is:retweet"
-tweets = client.search_recent_tweets(query=query, tweet_fields=['context_annotations', 'created_at'], max_results=100)
+tweets = client.search_recent_tweets(query=query, tweet_fields=['context_annotations', 'created_at', 'public_metrics'], max_results=100)
 counter = 0
 
 for tweet in tweets.data:
