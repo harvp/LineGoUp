@@ -31,14 +31,6 @@ client = tweepy.Client(
 # user = sys.argv[1]
 # ticker = sys.argv[2]
 
-user = "microsoft"
-t_user = client.get_user(username="microsoft")
-id_num = t_user[0]["id"]
-query = 'from:' + user + " -is:retweet"
-response = client.search_recent_tweets(query=query,
-                                       tweet_fields=['context_annotations', 'created_at', 'public_metrics'],
-                                       max_results=100)
-
 tz_utc = pytz.timezone('UTC')
 difference = datetime.timedelta(1)
 day_1 = datetime.datetime.now(tz_utc)
@@ -48,6 +40,12 @@ day_4 = day_3 - difference
 day_5 = day_4 - difference
 day_6 = day_5 - difference
 day_7 = day_6 - difference
+
+user = "microsoft"
+t_user = client.get_user(username="microsoft")
+id_num = t_user[0]["id"]
+query = 'from:' + user + " -is:retweet"
+response = client.get_users_mentions( id=id_num, tweet_fields=['context_annotations', 'created_at', 'public_metrics'], max_results=100)
 
 engagement_scores = [0, 0, 0, 0, 0, 0, 0]
 tweets_per_day = [0, 0, 0, 0, 0, 0, 0]
