@@ -33,13 +33,11 @@ counter = 0
 for tweet in tweets.data:
     counter += 2
 
-#print(counter)
+
 outputString = "\'"
 for tweet in tweets.data:
     tweetURL = "https://twitter.com/" + user + "/status/" + str(tweet.id)
     outputString += "<blockquote class=\"twitter-tweet\"><p>" + "<a href=\"" + tweetURL + "\"></a></p></blockquote>"
-    #print(tweet.text)
-    #print(tweetURL)
 
 outputString += "\'"
 

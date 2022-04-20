@@ -125,23 +125,25 @@ Dark Slate Blue: #483D8B
 				of other things.
 			</p>
 			<form>
-				<input id = "searchUser" type = "text" class = "text" placeholder = "Twitter User" name = "user" \>
+				<input id = "searchUser" type = "text" class = "text" placeholder = "Twitter User" name = "user" \><input id = "searchTicker" type = "text" class = "text" placeholder = "Stock Ticker" name = "ticker" \>
 			</form>
+			
 			<hr>
 			<form>
-				<input id = "goButton" type = "button" value = "Single Tweet" class = "button" onclick = "getSingleTweet()" \>
+		
+				<input id = "goButton" type = "button" value = "User's Recent Tweets" class = "button" onclick = "recentTweets()" \>
 
-				<input id = "goButton" type = "button" value = "Most Recent Tweets" class = "button" onclick = "getRecentByAccChron()" \>
+				<input id = "goButton" type = "button" value = "Stock History" class = "button" onclick = "stockHistory()" \>
 			</form>
 			<form>
-				<input id = "goButton" type = "button" value = "Most Recent Likes" class = "button" onclick = "getRecentByAccLikes()" \>
+				<input id = "goButton" type = "button" value = "Volatility Report" class = "button" onclick = "volatilityReport()"\>
 
-				<input id = "goButton" type = "button" value = "Most Recent Retweets" class = "button" onclick = "getRecentByAccRetweets()"\>
+				<input id = "goButton" type = "button" value = "Most Volatile Companies" class = "button" onclick = "top10Companies()"\>
 			</form>
 			<form>
-				<input id = "goButton" type = "button" value = "Top Tweets By Mention" class = "button" onclick = "getTopTweetsByMention()"\>
-	
 				<input id = "goButton" type = "button" value = "Top Tweets By Tag" class = "button" onclick = "getTopTweetsByTag()"\>
+
+				<input id = "goButton" type = "button" value = "Most Recent Mentions" class = "button" onclick = "getRecentByAccLikes()" \>
 			</form>
 		</section>
 		<hr>
@@ -158,7 +160,32 @@ Dark Slate Blue: #483D8B
 		<hr>
 		<section> <!-- Javascript to access scripts -->
 			<script async src="https://platform.twitter.com/widgets.js"></script>
-			<script>				
+			<script>
+
+			    function recentTweets()
+			    {
+					var user = document.getElementById("searchUser").value;
+					var temp1 = user;
+					if(temp1.trim()!= "")
+						toPHP("RecentByAccChron.php", "output", user, "", 1);	
+			    }
+			    function stockHistory()
+			    {
+			    	
+			    }
+			    function volatilityReport()
+			    {
+			    	var user = document.getElementById("searchUser").value;
+					var ticker = document.getElementById("searchTicker").value;
+					var temp1 = user;
+					var temp2 = user;
+					if((temp1.trim()!= "") && (temp2.trim()!= ""))
+						toPHP("volatilityReport.php", "output", user, ticker, 0)	
+			    }
+			    function top10Companies()
+			    {
+			    	
+			    }
 				function getSingleTweet()
 				{
 					var entry = document.getElementById("searchUser").value
@@ -207,16 +234,44 @@ Dark Slate Blue: #483D8B
 					
 				}
 
-				function toPHP(dest, output, parameter)
+				function toPHP(dest, output, user, ticker, mode)
 				{
-					var temp = parameter;
-					temp.trim();
-					if(temp != "")
+					if (mode == 0)
 					{
-						parameter.replace(/ /g,"_");
-						dest += "?q=" + parameter;
+						var temp = user;
+						temp.trim();
+						if(temp != "")
+						{
+							user.replace(/ /g,"_");
+							dest += "?q=" + user;
+						}
+						temp = ticker;
+						temp.trim();
+						if(temp != "")
+						{
+							user.replace(/ /g,"_");
+							dest += " " + ticker;
+						}
 					}
-				
+					if (mode == 1){
+						var temp = user;
+						temp.trim();
+						if(temp != "")
+						{
+							user.replace(/ /g,"_");
+							dest += "?q=" + user;
+						}
+					}
+					if (mode == 2){
+						var temp = ticker;
+						temp.trim();
+						if(temp != "")
+						{
+							user.replace(/ /g,"_");
+							dest += "?q=" + ticker;
+						}	
+					}
+
 					var xmlhttp = new XMLHttpRequest();
 					xmlhttp.onreadystatechange = function()
 					{
