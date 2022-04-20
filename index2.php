@@ -134,13 +134,12 @@ Dark Slate Blue: #483D8B
 				<input id = "goButton" type = "button" value = "User's Recent Tweets" class = "button" onclick = "recentTweets()" \>
 
 				<input id = "goButton" type = "button" value = "Stock History" class = "button" onclick = "stockHistory()" \>
-			</form>
-			<form>
-				<input id = "goButton" type = "button" value = "Volatility Report" class = "button" onclick = "volatilityReport()"\>
 
-				<input id = "goButton" type = "button" value = "Most Volatile Companies" class = "button" onclick = "top10Companies()"\>
+				<input id = "goButton" type = "button" value = "Volatility Report" class = "button" onclick = "volatilityReport()"\>
 			</form>
 			<form>
+				<input id = "goButton" type = "button" value = "Most Volatile Companies" class = "button" onclick = "top10Companies()"\>
+
 				<input id = "goButton" type = "button" value = "Top Tweets By Tag" class = "button" onclick = "getTopTweetsByTag()"\>
 
 				<input id = "goButton" type = "button" value = "Most Recent Mentions" class = "button" onclick = "getRecentByAccLikes()" \>
