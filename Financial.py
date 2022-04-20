@@ -79,21 +79,21 @@ for date in dates:
 average_volume = average_volume / tx_count
 average_pct = 0
 priceData.append([date, volume, open_val, close])
-outputString = "<h2> Stock Report for " + symbol + "</h2><center><table style='cellpadding=5; border:1px solid black; border-collapse:collapse;'>"
-outputString += "<tr><th>Date</th><th>Trade Volume</th><th>Opening Price</th><th>Closing Price</th></tr>"
+outputString = "<h2> Stock Report for " + symbol + "</h2><center><table style= 'padding:5px; border:1px solid black; border-collapse:collapse;'>"
+outputString += "<tr><th style= 'padding:5px; border:1px solid black;'>Date</th><th style= 'padding:5px; border:1px solid black;'>Trade Volume</th><th style= 'padding:5px; border:1px solid black;'>Opening Price</th><th style= 'padding:5px; border:1px solid black;'>Closing Price</th></tr>"
 i = 0
 for record in priceData:
-    outputString += "<tr><td>" + str(dates[i]) + "</td>"
-    outputString += "<td>" + str(record[1]) + "</td>"
-    outputString += "<td>" + str(record[2]) + "</td>"
-    outputString += "<td>" + str(record[3]) + "</td></tr>"
+    outputString += "<tr><td style= 'padding:5px; border:1px solid black;'>" + str(dates[i]) + "</td>"
+    outputString += "<td style='padding:5px; border:1px solid black;'>" + str(record[1]) + "</td>"
+    outputString += "<td style= 'padding:5px; border:1px solid black;'>" + str(record[2]) + "</td>"
+    outputString += "<td style= 'padding:5px; border:1px solid black;'>" + str(record[3]) + "</td></tr>"
     average_pct += record[4]
     i += 1
     if i == 7:
         break
 
-outputString += "<tr><td>---------------</td></tr>"
-outputString += "<tr><td>Average Volume Per Trading Day: </td><td></td><td>" + str(average_volume) + "</td></tr>"
+outputString += "<tr><td style= 'border:1px solid black;'>---------------</td></tr>"
+outputString += "<tr><td style= 'padding:5px; border:1px solid black;'>Average Volume Per Trading Day: </td><td style= 'border:1px solid black;'></td><td style= 'padding:5px; border:1px solid black;'>" + str(average_volume) + "</td></tr>"
 average_pct = average_pct / tx_count
-outputString += "<tr><td>Average % Change in Price Per Day: </td><td></td><td>" + str(average_pct) + "</td></tr></center></table>"
+outputString += "<tr><td style= 'padding:5px; border:1px solid black;'>Average % Change in Price Per Day: </td><td style= 'border:1px solid black;'></td><td style= 'padding:5px; border:1px solid black;'>" + str(average_pct) + "</td></tr></center></table>"
 print(outputString)
