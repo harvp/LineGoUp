@@ -92,7 +92,7 @@ for record in priceData:
     if i == 7:
         break
 
-outputString += "<tr><td style= 'border:1px solid black;'>---------------</td></tr>"
+outputString += "<tr><td style= 'padding:5px; border:1px solid black;'> </td></tr>"
 outputString += "<tr><td style= 'padding:5px; border:1px solid black;'>Average Volume Per Trading Day: </td><td style= 'border:1px solid black;'></td><td style= 'padding:5px; border:1px solid black;'>" + str(average_volume) + "</td></tr>"
 average_pct = average_pct / tx_count
 outputString += "<tr><td style= 'padding:5px; border:1px solid black;'>Average % Change in Price Per Day: </td><td style= 'border:1px solid black;'></td><td style= 'padding:5px; border:1px solid black;'>" + str(average_pct) + "</td></tr></center></table>"
