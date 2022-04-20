@@ -119,9 +119,9 @@ Dark Slate Blue: #483D8B
 				Search for User Info:
 			</h2>
 			<p>
-				Search for a user and gather information on a user.
-				You can find information such as their most recent retweets,
-				their most recent likes, their top tweets by tag, and a number
+				Search for a user using their Twitter account handle and stock ticker symbol.
+				You can find information such as their most recent tweets,
+				a report on their stocks from the last seven days, and a number
 				of other things.
 			</p>
 			<form>
