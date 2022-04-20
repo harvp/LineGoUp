@@ -172,19 +172,19 @@ volume_vi = numerator_volume_sum / (math.sqrt(denominator_volume_sum * denominat
 # print("The VI for the change in volume is " + str(volume_vi))
 
 outputString = "<h2> Volatility Report for " + company_name + "</h2><center><table style='cellpadding=5; border:1px solid black; border-collapse:collapse;'>"
-outputString += "<tr style = 'border:1px solid black; border-collapse:collapse;'><th>Date</th><th>Price Change</th><th>Trade Volume</th><th>Twitter Engagement Score</th></tr>"
+outputString += "<tr><th style = 'border:1px solid black;'>Date</th><th style = 'border:1px solid black;'>Price Change</th><th style = 'border:1px solid black;'>Trade Volume</th><thstyle = 'border:1px solid black;'>Twitter Engagement Score</th></tr>"
 i = 0
 for record in priceData:
-    outputString += "<tr><td>" + str(dates[i]) + "</td>"
-    outputString += "<td>" + str(record[1]) + "</td>"
-    outputString += "<td>" + str(record[2]) + "</td>"
-    outputString += "<td>" + str(engagement_scores[i]) + "</td></tr>"
+    outputString += "<tr><td style = 'border:1px solid black;'>" + str(dates[i]) + "</td>"
+    outputString += "<td style = 'border:1px solid black;'>" + str(record[1]) + "</td>"
+    outputString += "<td style = 'border:1px solid black;'>" + str(record[2]) + "</td>"
+    outputString += "<td style = 'border:1px solid black;'>" + str(engagement_scores[i]) + "</td></tr>"
     i += 1
     if i == 7:
         break
 
-outputString += "<tr><td>---------------</td></tr>"
-outputString += "<tr><td>Volatility Index by Trades: </td><td></td><td>" + str(volume_vi) + "</td></tr>"
-outputString += "<tr><td>Volatility Index by Price Change: </td><td></td><td>" + str(pct_vi) + "</td></tr></center></table>"
+outputString += "<tr><td> </td></tr>"
+outputString += "<tr><td style = 'border:1px solid black;'>Volatility Index by Trades: </td><td></td><td>" + str(volume_vi) + "</td></tr>"
+outputString += "<tr><td style = 'border:1px solid black;'>Volatility Index by Price Change: </td><td></td><td>" + str(pct_vi) + "</td></tr></center></table>"
 
 print(outputString)
