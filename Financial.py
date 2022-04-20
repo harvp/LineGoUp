@@ -79,7 +79,7 @@ for date in dates:
 average_volume = average_volume / tx_count
 average_pct = 0
 priceData.append([date, volume, open_val, close])
-outputString = "<h2> Stock Report for " + symbol + "</h2><table>"
+outputString = "<h2> Stock Report for " + symbol + "</h2><center><table style='cellpadding=5; border:1px solid black; border-collapse:collapse;'>"
 outputString += "<tr><th>Date</th><th>Trade Volume</th><th>Opening Price</th><th>Closing Price</th></tr>"
 i = 0
 for record in priceData:
@@ -95,5 +95,5 @@ for record in priceData:
 outputString += "<tr><td>---------------</td></tr>"
 outputString += "<tr><td>Average Volume Per Trading Day: </td><td></td><td>" + str(average_volume) + "</td></tr>"
 average_pct = average_pct / tx_count
-outputString += "<tr><td>Average % Change in Price Per Day: </td><td></td><td>" + str(average_pct) + "</td></tr></table>"
+outputString += "<tr><td>Average % Change in Price Per Day: </td><td></td><td>" + str(average_pct) + "</td></tr></center></table>"
 print(outputString)
