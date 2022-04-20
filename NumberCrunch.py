@@ -172,7 +172,7 @@ volume_vi = numerator_volume_sum / (math.sqrt(denominator_volume_sum * denominat
 # print("The VI for the change in volume is " + str(volume_vi))
 
 outputString = "<h2> Volatility Report for " + company_name + "</h2><center><table style='cellpadding=5; border:1px solid black; border-collapse:collapse;'>"
-outputString += "<tr border:1px solid black><th>Date</th><th>Price Change</th><th>Trade Volume</th><th>Twitter Engagement Score</th></tr>"
+outputString += "<tr style = 'border:1px solid black; border-collapse:collapse;'><th>Date</th><th>Price Change</th><th>Trade Volume</th><th>Twitter Engagement Score</th></tr>"
 i = 0
 for record in priceData:
     outputString += "<tr><td>" + str(dates[i]) + "</td>"
