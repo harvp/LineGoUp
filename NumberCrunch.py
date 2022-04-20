@@ -104,7 +104,7 @@ stockData = []
 stockData = yf.download(ticker, start=start, end=end, progress=False)
 
 
-stock = stockData.loc[::-1].reset_index().head()
+#stock = stockData.loc[::-1].reset_index().head()
 
 stock = stockData.loc[::-1].reset_index().head()
 

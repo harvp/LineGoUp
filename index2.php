@@ -171,7 +171,10 @@ Dark Slate Blue: #483D8B
 			    }
 			    function stockHistory()
 			    {
-			    	
+			    	var ticker = document.getElementById("searchTicker").value;
+					var temp1 = ticker;
+					if(temp1.trim()!= "")
+						toPHP("StockHistory.php", "output", "", ticker, 2);
 			    }
 			    function volatilityReport()
 			    {
@@ -184,49 +187,31 @@ Dark Slate Blue: #483D8B
 			    }
 			    function top10Companies()
 			    {
-			    	
+			    	toPHP("topCompanies.php", "output", "", "", 0)
 			    }
 				function getSingleTweet()
 				{
-					var entry = document.getElementById("searchUser").value
-					var temp = entry;
-					if(temp.trim()!= "")
-						toPHP("GetSingleTweetByAcc.php", "output", entry)
+					
 				}
 				function getRecentByAccChron()
 				{
-					var entry = document.getElementById("searchUser").value
-					var temp = entry;
-					if(temp.trim()!= "")
-						toPHP("RecentByAccChron.php", "output", entry)	
+					
 				}	
 				function getRecentByAccLikes()
 				{
-					var entry = document.getElementById("searchUser").value
-					var temp = entry;
-					if(temp.trim()!= "")
-						toPHP("RecentByAccLikes.php", "output", entry)
+					
 				}
 				function getRecentByAccRetweets()
 				{
-					var entry = document.getElementById("searchUser").value
-					var temp = entry;
-					if(temp.trim()!= "")
-						toPHP("RecentByAccRetweet.php", "output", entry)
+					
 				}
 				function getTopTweetsByMention()
 				{
-					var entry = document.getElementById("searchUser").value
-					var temp = entry;
-					if(temp.trim()!= "")
-						toPHP("TopTweetsByMention.php", "output", entry)
+					
 				}
 				function getTopTweetsByTag()
 				{
-					var entry = document.getElementById("searchUser").value
-					var temp = entry;
-					if(temp.trim()!= "")
-						toPHP("TopTweetsByTag.php", "output", entry)
+					
 				}
 
 				function pageLoad()
