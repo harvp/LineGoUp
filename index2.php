@@ -140,13 +140,10 @@ Dark Slate Blue: #483D8B
 			<form>
 				<input id = "goButton" type = "button" value = "Most Volatile - Trade" class = "button" onclick = "top10Companies()"\>
 
-				<input id = "goButton" type = "button" value = "Most Volatile - Volume" class = "button" onclick = "getTopTweetsByTag()"\>
+				<input id = "goButton" type = "button" value = "Most Volatile - Volume" class = "button" onclick = "top10ByVolume()"\>
 
-<<<<<<< HEAD
 				<input id = "goButton" type = "button" value = "Volatility By Mentions" class = "button" onclick = "recentMentions()" \>
-=======
-				<input id = "goButton" type = "button" value = "Most Recent Mentions" class = "button" onclick = "getTopTweetsByMention()" \>
->>>>>>> b08a70e9a95ff618f2e0b9669d23aca3484aa282
+				
 			</form>
 		</section>
 		<hr>
@@ -192,7 +189,7 @@ Dark Slate Blue: #483D8B
 			    {
 			    	toPHP("topCompanies.php", "output", "", "", 3)
 			    }
-<<<<<<< HEAD
+			    
 				function recentMentions()
 				{
 					var user = document.getElementById("searchUser").value;
@@ -202,28 +199,10 @@ Dark Slate Blue: #483D8B
 					if((temp1.trim()!= "") && (temp2.trim()!= ""))
 						toPHP("recentMentions.php", "output", user, ticker, 0)	
 				}
-				function getRecentByAccChron()
+				function top10ByVolume()
 				{
-					
+					toPHP("topCompaniesVolume.php", "output", "", "", 3)
 				}	
-				function getRecentByAccLikes()
-				{
-					
-				}
-				function getRecentByAccRetweets()
-				{
-					
-				}
-=======
->>>>>>> b08a70e9a95ff618f2e0b9669d23aca3484aa282
-				function getTopTweetsByMention()
-				{
-					
-				}
-				function getTopTweetsByTag()
-				{
-					
-				}
 
 				function pageLoad()
 				{

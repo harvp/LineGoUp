@@ -43,6 +43,14 @@ class StockDB:
             i += 1
         self.data = sorted(holder, key=lambda k: k["rank"])
 
+    def rankByVol(self):
+        holder = sorted(self.data, key=lambda k: k["volumevi"], reverse=True)
+        i = 1
+        for record in holder:
+            record["rank"] = i
+            i += 1
+        self.data = sorted(holder, key=lambda k: k["rank"])
+
     def output(self):
         pprint.pprint(self.data)
 
@@ -76,4 +84,8 @@ class StockDB:
             if record["rank"] == number:
                 return(record)
 
-
+    def getVol_by_rank(self, number):
+        self.rankByVol()
+        for record in self.data:
+            if record["rank"] == number:
+                return(record)
