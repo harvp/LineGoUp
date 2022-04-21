@@ -13,8 +13,8 @@ for record in stats:
         outputString += "<tr><td style = 'text-align:center; padding:10px; border:1px solid black;'>" + str(record["rank"]) + "</td>"
         outputString += "<td style = 'text-align:center; padding:10px; border:1px solid black;'>" + str(record['name']) + "</td>"
         outputString += "<td style = 'text-align:center; padding:10px; border:1px solid black;'>" + str(record["ticker"]) + "</td>"
-        outputString += "<td style = 'text-align:center; padding:10px; border:1px solid black;'>" + str(record["pctvi"]) + "</td></tr>"
-        outputString += "<td style = 'text-align:center; padding:10px; border:1px solid black;'>" + str(record["volumevi"]) + "</td></tr>"
+        outputString += "<td style = 'text-align:center; padding:10px; border:1px solid black;'>" + str(record["pctvi"]) + "</td>"
+        outputString += "<td style = 'text-align:center; padding:10px; border:1px solid black;'>" + str(record["volumevi"]) + "</td>"
         outputString += "<td style = 'text-align:center; padding:10px; border:1px solid black;'>" + str(record["account"]) + "</td></tr>"
     i += 1
 
