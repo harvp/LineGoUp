@@ -9,7 +9,6 @@ outputString = "<h2> Top Ten Most Volatile Companies </h2><center><table style='
 outputString += "<tr><th style = 'padding:10px; border:1px solid black;'>Rank</th><th style = 'padding:10px; border:1px solid black;'>Name</th><th style = 'padding:10px; border:1px solid black;'>Ticker</th><th style = 'padding:10px; border:1px solid black;'>Price VI</th></tr></th><th style = 'padding:10px; border:1px solid black;'>Volume VI</th></tr></th><th style = 'padding:10px; border:1px solid black;'>Twitter Account</th></tr>"
 i = 0
 for record in stats:
-    print(record)
     if i > 0:
         outputString += "<tr><td style = 'text-align:center; padding:10px; border:1px solid black;'>" + str(record["rank"]) + "</td>"
         outputString += "<td style = 'text-align:center; padding:10px; border:1px solid black;'>" + str(record['name']) + "</td>"
