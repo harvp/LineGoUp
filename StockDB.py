@@ -5,7 +5,7 @@ import numpy
 
 class StockDB:
     def __init__(self):
-        with open("C:\wamp64\www\LineGoUp\database.json") as db:
+        with open("database.json") as db:
             file = db.read()
             self.data = json.loads(file)
         self.removeDupes()
@@ -64,11 +64,11 @@ class StockDB:
         self.data = new
 
     def dump(self):
-        with open("C:\wamp64\www\LineGoUp\database.json", "r+") as db:
+        with open("database.json", "r+") as db:
             db.truncate(0)
             db.close()
 
-        with open("C:\wamp64\www\LineGoUp\database.json", "w") as db:
+        with open("database.json", "w") as db:
             db.write(json.dumps(self.data))
 
     def get_by_rank(self, number):
