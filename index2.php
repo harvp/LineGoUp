@@ -138,11 +138,11 @@ Dark Slate Blue: #483D8B
 				<input id = "goButton" type = "button" value = "Volatility Report" class = "button" onclick = "volatilityReport()"\>
 			</form>
 			<form>
-				<input id = "goButton" type = "button" value = "Most Volatile Companies" class = "button" onclick = "top10Companies()"\>
+				<input id = "goButton" type = "button" value = "Most Volatile - Trade" class = "button" onclick = "top10Companies()"\>
 
-				<input id = "goButton" type = "button" value = "Top Tweets By Tag" class = "button" onclick = "getTopTweetsByTag()"\>
+				<input id = "goButton" type = "button" value = "Most Volatile - Volume" class = "button" onclick = "getTopTweetsByTag()"\>
 
-				<input id = "goButton" type = "button" value = "Most Recent Mentions" class = "button" onclick = "getRecentByAccLikes()" \>
+				<input id = "goButton" type = "button" value = "Volatility By Mentions" class = "button" onclick = "recentMentions()" \>
 			</form>
 		</section>
 		<hr>
@@ -188,9 +188,14 @@ Dark Slate Blue: #483D8B
 			    {
 			    	toPHP("topCompanies.php", "output", "", "", 3)
 			    }
-				function getSingleTweet()
+				function recentMentions()
 				{
-					
+					var user = document.getElementById("searchUser").value;
+					var ticker = document.getElementById("searchTicker").value;
+					var temp1 = user;
+					var temp2 = user;
+					if((temp1.trim()!= "") && (temp2.trim()!= ""))
+						toPHP("recentMentions.php", "output", user, ticker, 0)	
 				}
 				function getRecentByAccChron()
 				{
