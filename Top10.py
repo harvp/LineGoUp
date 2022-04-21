@@ -6,7 +6,7 @@ for i in range(1, 11):
     stats.append(reporter.get_by_rank(i))
 
 outputString = "<h2> Top Ten Most Volatile Companies </h2><center><table style='padding:10px; border:1px solid black; border-collapse:collapse;'>"
-outputString += "<tr><th style = 'padding:10px; border:1px solid black;'>Rank</th><th style = 'padding:10px; border:1px solid black;'>Name</th><th style = 'padding:10px; border:1px solid black;'>Ticker</th><th style = 'padding:10px; border:1px solid black;'>Price VI</th></tr></th><th style = 'padding:10px; border:1px solid black;'>Volume VI</th></tr></th><th style = 'padding:10px; border:1px solid black;'>Twitter Account</th></tr>"
+outputString += "<tr><th style = 'padding:10px; border:1px solid black;'>Rank</th><th style = 'padding:10px; border:1px solid black;'>Name</th><th style = 'padding:10px; border:1px solid black;'>Ticker</th><th style = 'padding:10px; border:1px solid black;'>Price VI</th></th><th style = 'padding:10px; border:1px solid black;'>Volume VI</th></th><th style = 'padding:10px; border:1px solid black;'>Twitter Account</th></tr>"
 i = 0
 for record in stats:
     if i > 0:
