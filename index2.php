@@ -142,7 +142,11 @@ Dark Slate Blue: #483D8B
 
 				<input id = "goButton" type = "button" value = "Most Volatile - Volume" class = "button" onclick = "getTopTweetsByTag()"\>
 
+<<<<<<< HEAD
 				<input id = "goButton" type = "button" value = "Volatility By Mentions" class = "button" onclick = "recentMentions()" \>
+=======
+				<input id = "goButton" type = "button" value = "Most Recent Mentions" class = "button" onclick = "getTopTweetsByMention()" \>
+>>>>>>> b08a70e9a95ff618f2e0b9669d23aca3484aa282
 			</form>
 		</section>
 		<hr>
@@ -180,7 +184,7 @@ Dark Slate Blue: #483D8B
 			    	var user = document.getElementById("searchUser").value;
 					var ticker = document.getElementById("searchTicker").value;
 					var temp1 = user;
-					var temp2 = user;
+					var temp2 = ticker;
 					if((temp1.trim()!= "") && (temp2.trim()!= ""))
 						toPHP("volatilityReport.php", "output", user, ticker, 0)	
 			    }
@@ -188,6 +192,7 @@ Dark Slate Blue: #483D8B
 			    {
 			    	toPHP("topCompanies.php", "output", "", "", 3)
 			    }
+<<<<<<< HEAD
 				function recentMentions()
 				{
 					var user = document.getElementById("searchUser").value;
@@ -209,6 +214,8 @@ Dark Slate Blue: #483D8B
 				{
 					
 				}
+=======
+>>>>>>> b08a70e9a95ff618f2e0b9669d23aca3484aa282
 				function getTopTweetsByMention()
 				{
 					

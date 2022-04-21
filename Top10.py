@@ -18,6 +18,6 @@ for record in stats:
         outputString += "<td style = 'text-align:center; padding:10px; border:1px solid black;'>" + str(record["account"]) + "</td></tr>"
     i += 1
 
-outputString += "<tr><td style = 'border:1px solid black;'> </td></tr></center></table>"
+outputString += "</center></table>"
 
 print(outputString)
