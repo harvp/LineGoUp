@@ -142,7 +142,7 @@ Dark Slate Blue: #483D8B
 
 				<input id = "goButton" type = "button" value = "Top Tweets By Tag" class = "button" onclick = "getTopTweetsByTag()"\>
 
-				<input id = "goButton" type = "button" value = "Most Recent Mentions" class = "button" onclick = "getRecentByAccLikes()" \>
+				<input id = "goButton" type = "button" value = "Most Recent Mentions" class = "button" onclick = "getTopTweetsByMention()" \>
 			</form>
 		</section>
 		<hr>
@@ -180,7 +180,7 @@ Dark Slate Blue: #483D8B
 			    	var user = document.getElementById("searchUser").value;
 					var ticker = document.getElementById("searchTicker").value;
 					var temp1 = user;
-					var temp2 = user;
+					var temp2 = ticker;
 					if((temp1.trim()!= "") && (temp2.trim()!= ""))
 						toPHP("volatilityReport.php", "output", user, ticker, 0)	
 			    }
@@ -188,22 +188,6 @@ Dark Slate Blue: #483D8B
 			    {
 			    	toPHP("topCompanies.php", "output", "", "", 3)
 			    }
-				function getSingleTweet()
-				{
-					
-				}
-				function getRecentByAccChron()
-				{
-					
-				}	
-				function getRecentByAccLikes()
-				{
-					
-				}
-				function getRecentByAccRetweets()
-				{
-					
-				}
 				function getTopTweetsByMention()
 				{
 					
