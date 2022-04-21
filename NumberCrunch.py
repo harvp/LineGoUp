@@ -4,6 +4,7 @@ import yfinance as yf
 import datetime
 import sys
 import tweepy
+import StockDB
 
 
 def calc_percent(open_price, close):
@@ -168,9 +169,10 @@ for record in priceData:
 
 pct_vi = numerator_pct_sum / (math.sqrt(denominator_pct_sum * denominator_engagement_sum))
 volume_vi = numerator_volume_sum / (math.sqrt(denominator_volume_sum * denominator_engagement_sum))
-# print("The VI for the change in price is " + str(pct_vi))
-# print("The VI for the change in volume is " + str(volume_vi))
 
+
+saver = StockDB.StockDB()
+saver.save(company_name, ticker, pct_vi, volume_vi, user)
 outputString = "<h2> Volatility Report for " + company_name + "</h2><center><table style='padding:10px; border:1px solid black; border-collapse:collapse;'>"
 outputString += "<tr><th style = 'padding:10px; border:1px solid black;'>Date</th><th style = 'padding:10px; border:1px solid black;'>Price Change</th><th style = 'padding:10px; border:1px solid black;'>Trade Volume</th><th style = 'padding:10px; border:1px solid black;'>Twitter Engagement Score</th></tr>"
 i = 0

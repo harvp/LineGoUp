@@ -186,7 +186,7 @@ Dark Slate Blue: #483D8B
 			    }
 			    function top10Companies()
 			    {
-			    	toPHP("topCompanies.php", "output", "", "", 0)
+			    	toPHP("topCompanies.php", "output", "", "", 3)
 			    }
 				function getSingleTweet()
 				{
